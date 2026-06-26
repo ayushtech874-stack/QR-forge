@@ -31,7 +31,7 @@ export function ScanTest() {
           }
           setIsScanning(false);
         },
-        (_error) => {
+        () => {
           // ignore errors silently while scanning
         }
       );
