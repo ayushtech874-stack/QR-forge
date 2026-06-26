@@ -123,6 +123,18 @@ export function BatchMode({ options }: BatchModeProps) {
       {isOpen && (
         <div className="p-6 rounded-2xl border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-950 space-y-8 animate-in slide-in-from-top-4 fade-in">
           
+          <div className="p-4 rounded-xl bg-violet-50 border border-violet-100 dark:bg-violet-900/10 dark:border-violet-800/30">
+            <h4 className="text-sm font-semibold text-violet-900 dark:text-violet-300 mb-1.5">How Batch Generate works</h4>
+            <p className="text-xs text-violet-700 dark:text-violet-400/80 leading-relaxed mb-2">
+              Create up to 50 unique QR codes simultaneously, automatically styled with your current custom design settings (colors, logo, and shapes).
+            </p>
+            <ul className="text-xs text-violet-700 dark:text-violet-400/80 space-y-1 list-disc list-inside ml-1">
+              <li>Select the correct <strong>Data Type</strong> (e.g., URLs, Phone numbers).</li>
+              <li>Upload a simple <strong>.csv</strong> file containing a single column of your raw data.</li>
+              <li>We will format the data, generate the QR codes, and package them into a `.zip` file instantly!</li>
+            </ul>
+          </div>
+
           <div className="space-y-4">
             <h3 className="text-sm font-semibold text-zinc-900 dark:text-zinc-100 text-center">Batch Data Type</h3>
             <QRTypeSelector 

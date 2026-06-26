@@ -7,7 +7,7 @@ import { DownloadBar } from "./download-bar";
 
 interface LiveQRPreviewProps {
   value: string;
-  options?: any;
+  options?: Record<string, unknown>;
 }
 
 const defaultOptions = {

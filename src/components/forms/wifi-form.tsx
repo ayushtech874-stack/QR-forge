@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { inputClassName, QRFormProps } from "./shared-styles";
 
-export function WiFiForm({ value = "", onChange }: QRFormProps) {
+export function WiFiForm({ onChange }: QRFormProps) {
   const [ssid, setSsid] = useState("");
   const [password, setPassword] = useState("");
   const [security, setSecurity] = useState("WPA");

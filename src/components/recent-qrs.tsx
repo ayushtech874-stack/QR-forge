@@ -71,7 +71,7 @@ export function RecentQRs({ currentQR, onReuse }: RecentQRsProps) {
     if (saved) {
       try {
         setHistory(JSON.parse(saved));
-      } catch (e) {}
+      } catch {}
     }
   }, []);
 
