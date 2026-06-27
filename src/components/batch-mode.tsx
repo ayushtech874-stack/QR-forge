@@ -88,8 +88,8 @@ export function BatchMode({ options }: BatchModeProps) {
         setProgress(Math.round(((i + 1) / csvData.length) * 100));
       }
 
-      if (folder) {
-        const content = await folder.generateAsync({ type: "blob" });
+      if (zip) {
+        const content = await zip.generateAsync({ type: "blob" });
         const url = URL.createObjectURL(content);
         const link = document.createElement("a");
         link.href = url;
@@ -97,9 +97,9 @@ export function BatchMode({ options }: BatchModeProps) {
         link.click();
         URL.revokeObjectURL(url);
       }
-    } catch (err) {
-      console.error(err);
-      setError("An error occurred during generation.");
+    } catch (err: any) {
+      console.error("Batch error:", err);
+      setError(`Error: ${err?.message || String(err)}`);
     } finally {
       setIsGenerating(false);
       setProgress(100);
