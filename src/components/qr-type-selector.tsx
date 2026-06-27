@@ -30,12 +30,25 @@ export function QRTypeSelector({ selectedType, onSelect }: QRTypeSelectorProps) 
   return (
     <div className="w-full relative">
       <div 
-        className="flex w-full items-center gap-2 overflow-x-auto pb-2 pt-1 px-1 scrollbar-hide"
-        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        className="flex w-full items-center gap-2 overflow-x-auto pb-4 pt-1 px-1 custom-scrollbar"
       >
         <style dangerouslySetInnerHTML={{__html: `
-          .scrollbar-hide::-webkit-scrollbar {
-            display: none;
+          .custom-scrollbar::-webkit-scrollbar {
+            height: 6px;
+          }
+          .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+          }
+          .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #d4d4d8;
+            border-radius: 20px;
+          }
+          .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #52525b;
+          }
+          .custom-scrollbar {
+            scrollbar-width: thin;
+            scrollbar-color: #d4d4d8 transparent;
           }
         `}} />
         {qrTypes.map((type) => {
