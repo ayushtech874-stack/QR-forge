@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="antialiased">
-        <ThemeProvider attribute="class" defaultTheme="dark">
+        <ThemeProvider attribute="class" defaultTheme="light">
           <div className="flex min-h-screen flex-col relative overflow-hidden">
             {/* Subtle solid color effect on the sides */}
             <div className="fixed top-1/4 -left-[20vw] w-[40vw] h-[50vh] bg-indigo-500/10 dark:bg-indigo-500/15 blur-[120px] rounded-full pointer-events-none z-0" />
