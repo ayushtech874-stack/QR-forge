@@ -2,6 +2,10 @@
 
 import { Info } from "lucide-react";
 
+export type ErrorCorrectionLevel = "L" | "M" | "Q" | "H";
+export type DotType = "rounded" | "dots" | "classy" | "classy-rounded" | "square" | "extra-rounded";
+export type CornerSquareType = "dot" | "square" | "extra-rounded";
+
 export interface QROptions {
   width: number;
   height: number;
@@ -11,10 +15,10 @@ export interface QROptions {
     margin: number;
     hideBackgroundDots: boolean;
   };
-  dotsOptions: { type: string; color: string };
+  dotsOptions: { type: DotType; color: string };
   backgroundOptions: { color: string };
-  cornersSquareOptions: { type: string };
-  qrOptions: { errorCorrectionLevel: string };
+  cornersSquareOptions: { type: CornerSquareType };
+  qrOptions: { errorCorrectionLevel: ErrorCorrectionLevel };
 }
 
 export const defaultQROptions: QROptions = {
@@ -37,7 +41,7 @@ interface QRCustomizerProps {
   onChange: (options: QROptions) => void;
 }
 
-const dotStyles = [
+const dotStyles: Array<{ id: DotType; label: string; radius: string }> = [
   { id: "square", label: "Square", radius: "rounded-none" },
   { id: "dots", label: "Dots", radius: "rounded-full" },
   { id: "rounded", label: "Rounded", radius: "rounded-sm" },
@@ -46,7 +50,7 @@ const dotStyles = [
   { id: "classy-rounded", label: "Classy-Rounded", radius: "rounded-full rounded-tr-none" },
 ];
 
-const cornerStyles = [
+const cornerStyles: Array<{ id: CornerSquareType; label: string; radius: string }> = [
   { id: "square", label: "Square", radius: "rounded-none" },
   { id: "dot", label: "Dot", radius: "rounded-full" },
   { id: "extra-rounded", label: "Extra-Rounded", radius: "rounded-xl" },
@@ -163,7 +167,7 @@ export function QRCustomizer({ options, onChange }: QRCustomizerProps) {
           </div>
         </div>
         <div className="flex gap-3">
-          {["L", "M", "Q", "H"].map((level) => {
+          {(["L", "M", "Q", "H"] as ErrorCorrectionLevel[]).map((level) => {
             const isActive = options.qrOptions.errorCorrectionLevel === level;
             return (
               <button

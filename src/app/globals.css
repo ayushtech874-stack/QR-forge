@@ -17,13 +17,7 @@
 body {
   color: var(--foreground);
   background-color: var(--background);
-  background-image: radial-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px);
-  background-size: 24px 24px;
   font-family: 'Inter', sans-serif;
-}
-
-.dark body {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
 }
 
 @layer utilities {
