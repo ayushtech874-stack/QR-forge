@@ -28,6 +28,14 @@ const presets = [
   {
     name: "Email",
     src: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="%23ea4335"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>`
+  },
+  {
+    name: "Location",
+    src: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23ea4335" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>`
+  },
+  {
+    name: "UPI",
+    src: `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12"/><path d="M6 8h12"/><path d="M6 13h8.5l-5 8h5l5-8H6"/></svg>`
   }
 ];
 
@@ -111,6 +119,7 @@ export function CenterIconUpload({ options, onChange }: CenterIconUploadProps) {
         <div className="shrink-0">
           {options.image ? (
             <div className="h-16 w-16 rounded-full border border-zinc-200 dark:border-zinc-700 overflow-hidden bg-zinc-50 flex items-center justify-center p-2">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={options.image} alt="Logo" className="w-full h-full object-contain" />
             </div>
           ) : (
@@ -145,6 +154,7 @@ export function CenterIconUpload({ options, onChange }: CenterIconUploadProps) {
                 }`}
                 title={preset.name}
               >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={preset.src} alt={preset.name} className="h-5 w-5 object-contain" />
               </button>
             ))}
