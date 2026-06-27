@@ -30,10 +30,10 @@ export const defaultQROptions: QROptions = {
     margin: 5,
     hideBackgroundDots: true,
   },
-  dotsOptions: { type: "rounded", color: "#7c3aed" },
+  dotsOptions: { type: "rounded", color: "#000000" },
   backgroundOptions: { color: "#ffffff" },
   cornersSquareOptions: { type: "extra-rounded" },
-  qrOptions: { errorCorrectionLevel: "H" },
+  qrOptions: { errorCorrectionLevel: "H" as const },
 };
 
 interface QRCustomizerProps {

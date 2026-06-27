@@ -45,8 +45,11 @@ export function LiveQRPreview({ value, options = {} }: LiveQRPreviewProps) {
   return (
     <div className="flex flex-col items-center w-full">
       <div className="relative mx-auto flex items-center justify-center p-2">
-        {/* Card Wrapper - Solid UI */}
-        <div className="relative z-10 flex h-[260px] w-[260px] md:h-[300px] md:w-[300px] items-center justify-center rounded-2xl bg-white p-6 shadow-sm border border-zinc-200 dark:border-zinc-800 dark:bg-zinc-950 overflow-hidden">
+        {/* Animated Glowing Border Background */}
+        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-violet-600 via-indigo-500 to-violet-600 bg-[length:200%_200%] animate-border-glow opacity-50 blur-md dark:opacity-75 pointer-events-none"></div>
+        
+        {/* Card Wrapper */}
+        <div className="relative z-10 flex h-[260px] w-[260px] md:h-[300px] md:w-[300px] items-center justify-center rounded-2xl border border-white/20 bg-white/60 p-6 shadow-xl backdrop-blur-xl dark:border-white/10 dark:bg-zinc-950/60 overflow-hidden">
           <div 
             ref={ref} 
             className={`flex h-full w-full items-center justify-center bg-white rounded-xl [&>canvas]:max-w-full [&>canvas]:h-auto [&>svg]:max-w-full [&>svg]:h-auto ${!value ? "hidden" : ""}`} 

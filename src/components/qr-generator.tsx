@@ -72,7 +72,7 @@ export function QRGenerator() {
       <div className="flex flex-col-reverse lg:flex-row gap-8 items-start justify-center">
         {/* Left Column: Form and Customizer Section */}
         <div className="w-full lg:w-1/2 space-y-6">
-          <div className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-950 transition-all duration-300">
+          <div className="rounded-2xl border border-white/20 bg-white/60 p-6 shadow-sm backdrop-blur-xl dark:border-white/10 dark:bg-zinc-950/60 transition-all duration-300">
             <h3 className="mb-4 text-sm font-medium text-zinc-500 dark:text-zinc-400">
               Enter {selectedType} Details
             </h3>
