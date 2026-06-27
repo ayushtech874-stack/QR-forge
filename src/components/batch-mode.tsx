@@ -97,9 +97,9 @@ export function BatchMode({ options }: BatchModeProps) {
         link.click();
         URL.revokeObjectURL(url);
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error("Batch error:", err);
-      setError(`Error: ${err?.message || String(err)}`);
+      setError(`Error: ${(err as Error)?.message || String(err)}`);
     } finally {
       setIsGenerating(false);
       setProgress(100);
