@@ -6,6 +6,9 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "QR Forge",
   description: "Create and customize your QR codes",
+  verification: {
+    google: "uWaKXvizX7DpjnXm4070Pe9NJ2DSn1xtF2Ofx36Xtp4",
+  },
 };
 
 export default function RootLayout({
